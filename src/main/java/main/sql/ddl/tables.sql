@@ -1,89 +1,4 @@
---
--- PostgreSQL database dump
---
-
--- Dumped from database version 9.5beta2
--- Dumped by pg_dump version 9.5beta2
-
--- Started on 2016-02-23 19:48:06
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SET check_function_bodies = false;
-SET client_min_messages = warning;
-SET row_security = off;
-
-DROP DATABASE IF EXISTS "ProRata";
---
--- TOC entry 2235 (class 1262 OID 24321)
--- Name: ProRata; Type: DATABASE; Schema: -; Owner: postgres
---
-
-CREATE DATABASE "ProRata" WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'English_United Kingdom.1252' LC_CTYPE = 'English_United Kingdom.1252';
-
-
-ALTER DATABASE "ProRata" OWNER TO postgres;
-
-\connect "ProRata"
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SET check_function_bodies = false;
-SET client_min_messages = warning;
-SET row_security = off;
-
---
--- TOC entry 5 (class 2615 OID 2200)
--- Name: public; Type: SCHEMA; Schema: -; Owner: postgres
---
-
-CREATE SCHEMA public;
-
-
-ALTER SCHEMA public OWNER TO postgres;
-
---
--- TOC entry 2236 (class 0 OID 0)
--- Dependencies: 5
--- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: postgres
---
-
-COMMENT ON SCHEMA public IS 'standard public schema';
-
-
---
--- TOC entry 211 (class 3079 OID 12355)
--- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
---
-
-CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
-
-
---
--- TOC entry 2238 (class 0 OID 0)
--- Dependencies: 211
--- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
---
-
-COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
-
-
-SET search_path = public, pg_catalog;
-
-SET default_tablespace = '';
-
-SET default_with_oids = false;
-
---
--- TOC entry 186 (class 1259 OID 29837)
--- Name: account; Type: TABLE; Schema: public; Owner: postgres
---
-
-CREATE TABLE account (
+﻿CREATE TABLE account (
     account_id integer NOT NULL,
     prorata_user_id integer NOT NULL,
     account_number character varying(10) NOT NULL,
@@ -92,7 +7,7 @@ CREATE TABLE account (
 );
 
 
-ALTER TABLE account OWNER TO postgres;
+ALTER TABLE account OWNER TO fgcbxkxnzhsbvi;
 
 --
 -- TOC entry 201 (class 1259 OID 30080)
@@ -107,10 +22,10 @@ CREATE SEQUENCE account_account_id_pk_seq
     CACHE 1;
 
 
-ALTER TABLE account_account_id_pk_seq OWNER TO postgres;
+ALTER TABLE account_account_id_pk_seq OWNER TO fgcbxkxnzhsbvi;
 
 --
--- TOC entry 2239 (class 0 OID 0)
+-- TOC entry 2249 (class 0 OID 0)
 -- Dependencies: 201
 -- Name: account_account_id_pk_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -133,7 +48,7 @@ CREATE TABLE bank (
 );
 
 
-ALTER TABLE bank OWNER TO postgres;
+ALTER TABLE bank OWNER TO fgcbxkxnzhsbvi;
 
 --
 -- TOC entry 202 (class 1259 OID 30082)
@@ -148,10 +63,10 @@ CREATE SEQUENCE bank_bank_id_pk_seq
     CACHE 1;
 
 
-ALTER TABLE bank_bank_id_pk_seq OWNER TO postgres;
+ALTER TABLE bank_bank_id_pk_seq OWNER TO fgcbxkxnzhsbvi;
 
 --
--- TOC entry 2240 (class 0 OID 0)
+-- TOC entry 2250 (class 0 OID 0)
 -- Dependencies: 202
 -- Name: bank_bank_id_pk_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -170,7 +85,7 @@ CREATE TABLE contract (
 );
 
 
-ALTER TABLE contract OWNER TO postgres;
+ALTER TABLE contract OWNER TO fgcbxkxnzhsbvi;
 
 --
 -- TOC entry 208 (class 1259 OID 30094)
@@ -185,10 +100,10 @@ CREATE SEQUENCE contract_contract_id_pk_seq
     CACHE 1;
 
 
-ALTER TABLE contract_contract_id_pk_seq OWNER TO postgres;
+ALTER TABLE contract_contract_id_pk_seq OWNER TO fgcbxkxnzhsbvi;
 
 --
--- TOC entry 2241 (class 0 OID 0)
+-- TOC entry 2251 (class 0 OID 0)
 -- Dependencies: 208
 -- Name: contract_contract_id_pk_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -209,7 +124,7 @@ CREATE TABLE employer (
 );
 
 
-ALTER TABLE employer OWNER TO postgres;
+ALTER TABLE employer OWNER TO fgcbxkxnzhsbvi;
 
 --
 -- TOC entry 182 (class 1259 OID 29817)
@@ -225,7 +140,7 @@ CREATE TABLE employer_contact (
 );
 
 
-ALTER TABLE employer_contact OWNER TO postgres;
+ALTER TABLE employer_contact OWNER TO fgcbxkxnzhsbvi;
 
 --
 -- TOC entry 200 (class 1259 OID 30078)
@@ -240,10 +155,10 @@ CREATE SEQUENCE employer_contact_employer_contact_id_pk_seq
     CACHE 1;
 
 
-ALTER TABLE employer_contact_employer_contact_id_pk_seq OWNER TO postgres;
+ALTER TABLE employer_contact_employer_contact_id_pk_seq OWNER TO fgcbxkxnzhsbvi;
 
 --
--- TOC entry 2242 (class 0 OID 0)
+-- TOC entry 2252 (class 0 OID 0)
 -- Dependencies: 200
 -- Name: employer_contact_employer_contact_id_pk_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -264,10 +179,10 @@ CREATE SEQUENCE employer_employer_id_pk_seq
     CACHE 1;
 
 
-ALTER TABLE employer_employer_id_pk_seq OWNER TO postgres;
+ALTER TABLE employer_employer_id_pk_seq OWNER TO fgcbxkxnzhsbvi;
 
 --
--- TOC entry 2243 (class 0 OID 0)
+-- TOC entry 2253 (class 0 OID 0)
 -- Dependencies: 198
 -- Name: employer_employer_id_pk_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -292,7 +207,7 @@ CREATE TABLE employment (
 );
 
 
-ALTER TABLE employment OWNER TO postgres;
+ALTER TABLE employment OWNER TO fgcbxkxnzhsbvi;
 
 --
 -- TOC entry 210 (class 1259 OID 30098)
@@ -307,10 +222,10 @@ CREATE SEQUENCE employment_employment_id_pk_seq
     CACHE 1;
 
 
-ALTER TABLE employment_employment_id_pk_seq OWNER TO postgres;
+ALTER TABLE employment_employment_id_pk_seq OWNER TO fgcbxkxnzhsbvi;
 
 --
--- TOC entry 2244 (class 0 OID 0)
+-- TOC entry 2254 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: employment_employment_id_pk_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -327,11 +242,12 @@ CREATE TABLE employment_session (
     employment_session_id integer NOT NULL,
     start_time timestamp with time zone,
     end_time timestamp with time zone,
-    employment_id integer NOT NULL
+    employment_id integer NOT NULL,
+    location_id integer NOT NULL
 );
 
 
-ALTER TABLE employment_session OWNER TO postgres;
+ALTER TABLE employment_session OWNER TO fgcbxkxnzhsbvi;
 
 --
 -- TOC entry 205 (class 1259 OID 30088)
@@ -346,15 +262,53 @@ CREATE SEQUENCE employment_session_employment_session_id_pk_seq
     CACHE 1;
 
 
-ALTER TABLE employment_session_employment_session_id_pk_seq OWNER TO postgres;
+ALTER TABLE employment_session_employment_session_id_pk_seq OWNER TO fgcbxkxnzhsbvi;
 
 --
--- TOC entry 2245 (class 0 OID 0)
+-- TOC entry 2255 (class 0 OID 0)
 -- Dependencies: 205
 -- Name: employment_session_employment_session_id_pk_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE employment_session_employment_session_id_pk_seq OWNED BY employment_session.employment_session_id;
+
+
+--
+-- TOC entry 211 (class 1259 OID 30126)
+-- Name: location; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE location (
+    location_id integer NOT NULL,
+    x_coordinate numeric NOT NULL,
+    y_coordinate numeric NOT NULL
+);
+
+
+ALTER TABLE location OWNER TO fgcbxkxnzhsbvi;
+
+--
+-- TOC entry 212 (class 1259 OID 30132)
+-- Name: location_location_id_pk_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE location_location_id_pk_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE location_location_id_pk_seq OWNER TO fgcbxkxnzhsbvi;
+
+--
+-- TOC entry 2256 (class 0 OID 0)
+-- Dependencies: 212
+-- Name: location_location_id_pk_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE location_location_id_pk_seq OWNED BY location.location_id;
 
 
 --
@@ -368,7 +322,7 @@ CREATE TABLE pay_cheque (
 );
 
 
-ALTER TABLE pay_cheque OWNER TO postgres;
+ALTER TABLE pay_cheque OWNER TO fgcbxkxnzhsbvi;
 
 --
 -- TOC entry 196 (class 1259 OID 30070)
@@ -383,10 +337,10 @@ CREATE SEQUENCE pay_cheque_pay_cheque_id_pk_seq
     CACHE 1;
 
 
-ALTER TABLE pay_cheque_pay_cheque_id_pk_seq OWNER TO postgres;
+ALTER TABLE pay_cheque_pay_cheque_id_pk_seq OWNER TO fgcbxkxnzhsbvi;
 
 --
--- TOC entry 2246 (class 0 OID 0)
+-- TOC entry 2257 (class 0 OID 0)
 -- Dependencies: 196
 -- Name: pay_cheque_pay_cheque_id_pk_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -407,7 +361,7 @@ CREATE TABLE payment (
 );
 
 
-ALTER TABLE payment OWNER TO postgres;
+ALTER TABLE payment OWNER TO fgcbxkxnzhsbvi;
 
 --
 -- TOC entry 197 (class 1259 OID 30072)
@@ -422,10 +376,10 @@ CREATE SEQUENCE payment_payment_id_pk_seq
     CACHE 1;
 
 
-ALTER TABLE payment_payment_id_pk_seq OWNER TO postgres;
+ALTER TABLE payment_payment_id_pk_seq OWNER TO fgcbxkxnzhsbvi;
 
 --
--- TOC entry 2247 (class 0 OID 0)
+-- TOC entry 2258 (class 0 OID 0)
 -- Dependencies: 197
 -- Name: payment_payment_id_pk_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -449,7 +403,7 @@ CREATE TABLE prorata_user (
 );
 
 
-ALTER TABLE prorata_user OWNER TO postgres;
+ALTER TABLE prorata_user OWNER TO fgcbxkxnzhsbvi;
 
 --
 -- TOC entry 204 (class 1259 OID 30086)
@@ -464,10 +418,10 @@ CREATE SEQUENCE prorata_user_prorata_user_id_pk_seq
     CACHE 1;
 
 
-ALTER TABLE prorata_user_prorata_user_id_pk_seq OWNER TO postgres;
+ALTER TABLE prorata_user_prorata_user_id_pk_seq OWNER TO fgcbxkxnzhsbvi;
 
 --
--- TOC entry 2248 (class 0 OID 0)
+-- TOC entry 2259 (class 0 OID 0)
 -- Dependencies: 204
 -- Name: prorata_user_prorata_user_id_pk_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -488,7 +442,7 @@ CREATE SEQUENCE prorata_user_user_id_pk_seq
     CACHE 1;
 
 
-ALTER TABLE prorata_user_user_id_pk_seq OWNER TO postgres;
+ALTER TABLE prorata_user_user_id_pk_seq OWNER TO fgcbxkxnzhsbvi;
 
 --
 -- TOC entry 195 (class 1259 OID 30043)
@@ -504,7 +458,7 @@ CREATE TABLE subscription (
 );
 
 
-ALTER TABLE subscription OWNER TO postgres;
+ALTER TABLE subscription OWNER TO fgcbxkxnzhsbvi;
 
 --
 -- TOC entry 209 (class 1259 OID 30096)
@@ -519,10 +473,10 @@ CREATE SEQUENCE subscription_subscription_id_pk_seq
     CACHE 1;
 
 
-ALTER TABLE subscription_subscription_id_pk_seq OWNER TO postgres;
+ALTER TABLE subscription_subscription_id_pk_seq OWNER TO fgcbxkxnzhsbvi;
 
 --
--- TOC entry 2249 (class 0 OID 0)
+-- TOC entry 2260 (class 0 OID 0)
 -- Dependencies: 209
 -- Name: subscription_subscription_id_pk_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -542,7 +496,7 @@ CREATE TABLE subscription_type (
 );
 
 
-ALTER TABLE subscription_type OWNER TO postgres;
+ALTER TABLE subscription_type OWNER TO fgcbxkxnzhsbvi;
 
 --
 -- TOC entry 206 (class 1259 OID 30090)
@@ -557,10 +511,10 @@ CREATE SEQUENCE subscription_type_subscription_type_id_pk_seq
     CACHE 1;
 
 
-ALTER TABLE subscription_type_subscription_type_id_pk_seq OWNER TO postgres;
+ALTER TABLE subscription_type_subscription_type_id_pk_seq OWNER TO fgcbxkxnzhsbvi;
 
 --
--- TOC entry 2250 (class 0 OID 0)
+-- TOC entry 2261 (class 0 OID 0)
 -- Dependencies: 206
 -- Name: subscription_type_subscription_type_id_pk_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -582,7 +536,7 @@ CREATE TABLE tax_bracket (
 );
 
 
-ALTER TABLE tax_bracket OWNER TO postgres;
+ALTER TABLE tax_bracket OWNER TO fgcbxkxnzhsbvi;
 
 --
 -- TOC entry 199 (class 1259 OID 30076)
@@ -597,10 +551,10 @@ CREATE SEQUENCE tax_bracket_tax_bracket_id_pk_seq
     CACHE 1;
 
 
-ALTER TABLE tax_bracket_tax_bracket_id_pk_seq OWNER TO postgres;
+ALTER TABLE tax_bracket_tax_bracket_id_pk_seq OWNER TO fgcbxkxnzhsbvi;
 
 --
--- TOC entry 2251 (class 0 OID 0)
+-- TOC entry 2262 (class 0 OID 0)
 -- Dependencies: 199
 -- Name: tax_bracket_tax_bracket_id_pk_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -621,7 +575,7 @@ CREATE TABLE tax_deduction (
 );
 
 
-ALTER TABLE tax_deduction OWNER TO postgres;
+ALTER TABLE tax_deduction OWNER TO fgcbxkxnzhsbvi;
 
 --
 -- TOC entry 203 (class 1259 OID 30084)
@@ -636,10 +590,10 @@ CREATE SEQUENCE tax_deduction_tax_deduction_id_pk_seq
     CACHE 1;
 
 
-ALTER TABLE tax_deduction_tax_deduction_id_pk_seq OWNER TO postgres;
+ALTER TABLE tax_deduction_tax_deduction_id_pk_seq OWNER TO fgcbxkxnzhsbvi;
 
 --
--- TOC entry 2252 (class 0 OID 0)
+-- TOC entry 2263 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: tax_deduction_tax_deduction_id_pk_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -661,7 +615,7 @@ CREATE TABLE user_contact (
 );
 
 
-ALTER TABLE user_contact OWNER TO postgres;
+ALTER TABLE user_contact OWNER TO fgcbxkxnzhsbvi;
 
 --
 -- TOC entry 207 (class 1259 OID 30092)
@@ -676,10 +630,10 @@ CREATE SEQUENCE user_contact_user_contact_id_pk_seq
     CACHE 1;
 
 
-ALTER TABLE user_contact_user_contact_id_pk_seq OWNER TO postgres;
+ALTER TABLE user_contact_user_contact_id_pk_seq OWNER TO fgcbxkxnzhsbvi;
 
 --
--- TOC entry 2253 (class 0 OID 0)
+-- TOC entry 2264 (class 0 OID 0)
 -- Dependencies: 207
 -- Name: user_contact_user_contact_id_pk_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -688,7 +642,16 @@ ALTER SEQUENCE user_contact_user_contact_id_pk_seq OWNED BY user_contact.user_co
 
 
 --
--- TOC entry 2084 (class 2606 OID 29841)
+-- TOC entry 2109 (class 2606 OID 30135)
+-- Name: location_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY location
+    ADD CONSTRAINT location_pkey PRIMARY KEY (location_id);
+
+
+--
+-- TOC entry 2091 (class 2606 OID 29841)
 -- Name: pk_account; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -697,7 +660,7 @@ ALTER TABLE ONLY account
 
 
 --
--- TOC entry 2070 (class 2606 OID 29811)
+-- TOC entry 2077 (class 2606 OID 29811)
 -- Name: pk_bank; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -706,7 +669,7 @@ ALTER TABLE ONLY bank
 
 
 --
--- TOC entry 2094 (class 2606 OID 29866)
+-- TOC entry 2101 (class 2606 OID 29866)
 -- Name: pk_contract; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -715,7 +678,7 @@ ALTER TABLE ONLY contract
 
 
 --
--- TOC entry 2072 (class 2606 OID 29816)
+-- TOC entry 2079 (class 2606 OID 29816)
 -- Name: pk_employer; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -724,7 +687,7 @@ ALTER TABLE ONLY employer
 
 
 --
--- TOC entry 2074 (class 2606 OID 29821)
+-- TOC entry 2081 (class 2606 OID 29821)
 -- Name: pk_employer_contact; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -733,7 +696,7 @@ ALTER TABLE ONLY employer_contact
 
 
 --
--- TOC entry 2086 (class 2606 OID 29846)
+-- TOC entry 2093 (class 2606 OID 29846)
 -- Name: pk_employment; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -742,7 +705,7 @@ ALTER TABLE ONLY employment
 
 
 --
--- TOC entry 2088 (class 2606 OID 29851)
+-- TOC entry 2095 (class 2606 OID 29851)
 -- Name: pk_employment_session; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -751,7 +714,7 @@ ALTER TABLE ONLY employment_session
 
 
 --
--- TOC entry 2096 (class 2606 OID 29871)
+-- TOC entry 2103 (class 2606 OID 29871)
 -- Name: pk_pay_cheque; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -760,7 +723,7 @@ ALTER TABLE ONLY pay_cheque
 
 
 --
--- TOC entry 2090 (class 2606 OID 29856)
+-- TOC entry 2097 (class 2606 OID 29856)
 -- Name: pk_payment; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -769,7 +732,7 @@ ALTER TABLE ONLY payment
 
 
 --
--- TOC entry 2076 (class 2606 OID 29826)
+-- TOC entry 2083 (class 2606 OID 29826)
 -- Name: pk_prorata_user; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -778,7 +741,7 @@ ALTER TABLE ONLY prorata_user
 
 
 --
--- TOC entry 2080 (class 2606 OID 29831)
+-- TOC entry 2087 (class 2606 OID 29831)
 -- Name: pk_tax_bracket; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -787,7 +750,7 @@ ALTER TABLE ONLY tax_bracket
 
 
 --
--- TOC entry 2092 (class 2606 OID 29861)
+-- TOC entry 2099 (class 2606 OID 29861)
 -- Name: pk_tax_deduction; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -796,7 +759,7 @@ ALTER TABLE ONLY tax_deduction
 
 
 --
--- TOC entry 2082 (class 2606 OID 29836)
+-- TOC entry 2089 (class 2606 OID 29836)
 -- Name: pk_user_contact; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -805,7 +768,7 @@ ALTER TABLE ONLY user_contact
 
 
 --
--- TOC entry 2100 (class 2606 OID 30047)
+-- TOC entry 2107 (class 2606 OID 30047)
 -- Name: subscription_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -814,7 +777,7 @@ ALTER TABLE ONLY subscription
 
 
 --
--- TOC entry 2098 (class 2606 OID 30027)
+-- TOC entry 2105 (class 2606 OID 30027)
 -- Name: subscription_type_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -823,7 +786,7 @@ ALTER TABLE ONLY subscription_type
 
 
 --
--- TOC entry 2078 (class 2606 OID 30064)
+-- TOC entry 2085 (class 2606 OID 30064)
 -- Name: unique_prorata_user_email; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -832,7 +795,7 @@ ALTER TABLE ONLY prorata_user
 
 
 --
--- TOC entry 2103 (class 2606 OID 29985)
+-- TOC entry 2112 (class 2606 OID 29985)
 -- Name: fk_2gcgtrmnvwgv2sphapl5jmo3w; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -841,7 +804,7 @@ ALTER TABLE ONLY user_contact
 
 
 --
--- TOC entry 2105 (class 2606 OID 29882)
+-- TOC entry 2114 (class 2606 OID 29882)
 -- Name: fk_account_0; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -850,7 +813,7 @@ ALTER TABLE ONLY account
 
 
 --
--- TOC entry 2106 (class 2606 OID 29887)
+-- TOC entry 2115 (class 2606 OID 29887)
 -- Name: fk_account_1; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -859,7 +822,7 @@ ALTER TABLE ONLY account
 
 
 --
--- TOC entry 2113 (class 2606 OID 29922)
+-- TOC entry 2123 (class 2606 OID 29922)
 -- Name: fk_contract_0; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -868,7 +831,7 @@ ALTER TABLE ONLY contract
 
 
 --
--- TOC entry 2101 (class 2606 OID 29872)
+-- TOC entry 2110 (class 2606 OID 29872)
 -- Name: fk_employer_contact_0; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -877,7 +840,7 @@ ALTER TABLE ONLY employer_contact
 
 
 --
--- TOC entry 2107 (class 2606 OID 29892)
+-- TOC entry 2116 (class 2606 OID 29892)
 -- Name: fk_employment_0; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -886,7 +849,7 @@ ALTER TABLE ONLY employment
 
 
 --
--- TOC entry 2108 (class 2606 OID 29897)
+-- TOC entry 2117 (class 2606 OID 29897)
 -- Name: fk_employment_1; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -895,7 +858,7 @@ ALTER TABLE ONLY employment
 
 
 --
--- TOC entry 2109 (class 2606 OID 29902)
+-- TOC entry 2118 (class 2606 OID 29902)
 -- Name: fk_employment_session_0; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -904,7 +867,16 @@ ALTER TABLE ONLY employment_session
 
 
 --
--- TOC entry 2104 (class 2606 OID 29990)
+-- TOC entry 2119 (class 2606 OID 30141)
+-- Name: fk_employment_session_location; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY employment_session
+    ADD CONSTRAINT fk_employment_session_location FOREIGN KEY (location_id) REFERENCES location(location_id);
+
+
+--
+-- TOC entry 2113 (class 2606 OID 29990)
 -- Name: fk_h6syfj9fse40b9ii02tcxj3ya; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -913,7 +885,7 @@ ALTER TABLE ONLY user_contact
 
 
 --
--- TOC entry 2114 (class 2606 OID 29927)
+-- TOC entry 2124 (class 2606 OID 29927)
 -- Name: fk_pay_cheque_0; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -922,7 +894,7 @@ ALTER TABLE ONLY pay_cheque
 
 
 --
--- TOC entry 2110 (class 2606 OID 29907)
+-- TOC entry 2120 (class 2606 OID 29907)
 -- Name: fk_payment_0; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -931,7 +903,7 @@ ALTER TABLE ONLY payment
 
 
 --
--- TOC entry 2115 (class 2606 OID 30048)
+-- TOC entry 2125 (class 2606 OID 30048)
 -- Name: fk_subscription_prorata_user; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -940,7 +912,7 @@ ALTER TABLE ONLY subscription
 
 
 --
--- TOC entry 2116 (class 2606 OID 30053)
+-- TOC entry 2126 (class 2606 OID 30053)
 -- Name: fk_subscription_subscription_type; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -949,7 +921,7 @@ ALTER TABLE ONLY subscription
 
 
 --
--- TOC entry 2111 (class 2606 OID 29912)
+-- TOC entry 2121 (class 2606 OID 29912)
 -- Name: fk_tax_deduction_0; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -958,7 +930,7 @@ ALTER TABLE ONLY tax_deduction
 
 
 --
--- TOC entry 2112 (class 2606 OID 29917)
+-- TOC entry 2122 (class 2606 OID 29917)
 -- Name: fk_tax_deduction_1; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -967,29 +939,9 @@ ALTER TABLE ONLY tax_deduction
 
 
 --
--- TOC entry 2102 (class 2606 OID 29877)
+-- TOC entry 2111 (class 2606 OID 29877)
 -- Name: fk_user_contact_0; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY user_contact
     ADD CONSTRAINT fk_user_contact_0 FOREIGN KEY (prorata_user_id) REFERENCES prorata_user(prorata_user_id) ON UPDATE CASCADE ON DELETE CASCADE;
-
-
---
--- TOC entry 2237 (class 0 OID 0)
--- Dependencies: 5
--- Name: public; Type: ACL; Schema: -; Owner: postgres
---
-
-REVOKE ALL ON SCHEMA public FROM PUBLIC;
-REVOKE ALL ON SCHEMA public FROM postgres;
-GRANT ALL ON SCHEMA public TO postgres;
-GRANT ALL ON SCHEMA public TO PUBLIC;
-
-
--- Completed on 2016-02-23 19:48:07
-
---
--- PostgreSQL database dump complete
---
-
